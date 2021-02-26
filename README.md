@@ -8,4 +8,15 @@ HTML and CSS modified from the provided files as follows:
 3. Modification of css variable colours e.g. ``` --color-win: #3db44b;```
 4. Addition of animated 'miss' indicator i.e. ```livesHearts[this.missed - 1].firstElementChild.setAttribute("src", "images/lostHeart.png");```
 
+```@keyframes beating{
+  from {transform: scale(1.5);}
+  to {transform: scale(0.8);}
+}
+.lastHeart{
+animation-name: beating;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+}
+```
+
 
