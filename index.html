@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FSJS Project 4 | Phrase Hunter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="main-container">
+			<div id="overlay" class="start">
+				<h2 class="title">Phrase Hunter</h2>
+				<h1 id="game-over-message"></h1>
+				<button id="btn__reset">Start Game</button>
+			</div>
+
+			<div id="banner" class="section">
+				<h2 class="header">Phrase Hunter</h2>
+			</div>
+
+			<div id="phrase" class="section">
+				<ul></ul>
+			</div>
+
+			<div id="qwerty" class="section">
+				<div class="keyrow">
+					<button class="key QKey">q</button>
+					<button class="key WKey">w</button>
+					<button class="key EKey">e</button>
+					<button class="key RKey">r</button>
+					<button class="key TKey">t</button>
+					<button class="key YKey">y</button>
+					<button class="key UKey">u</button>
+					<button class="key IKey">i</button>
+					<button class="key OKey">o</button>
+					<button class="key PKey">p</button>
+				</div>
+
+				<div class="keyrow">
+					<button class="key AKey">a</button>
+					<button class="key SKey">s</button>
+					<button class="key DKey">d</button>
+					<button class="key FKey">f</button>
+					<button class="key GKey">g</button>
+					<button class="key HKey">h</button>
+					<button class="key JKey">j</button>
+					<button class="key KKey">k</button>
+					<button class="key LKey">l</button>
+				</div>
+
+				<div class="keyrow">
+					<button class="key ZKey">z</button>
+					<button class="key XKey">x</button>
+					<button class="key CKey">c</button>
+					<button class="key VKey">v</button>
+					<button class="key BKey">b</button>
+					<button class="key NKey">n</button>
+					<button class="key MKey">m</button>
+				</div>
+			</div>
+
+			<div id="scoreboard" class="section">
+				<ol>
+					<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>
+					<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>
+					<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>
+					<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>
+					<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>
+				</ol>
+			</div>
+		</div>
+
+	</body>
+    
+	<script type="text/javascript" src="js/Phrase.js"></script>
+	<script type="text/javascript" src="js/Game.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</html>
