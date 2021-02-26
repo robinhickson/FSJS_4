@@ -46,7 +46,8 @@ class Phrase {
                 game.removeLife();
             }
         }
-    };
+    }
+
     /**
      *  Method: show letter if matching (contained in phrase string) 
      */
@@ -61,6 +62,6 @@ class Phrase {
             matchedClass[i].classList.add("show");
             matchedClass[i].classList.remove("hide");
         }
-    };
+    }
 
-};
+}

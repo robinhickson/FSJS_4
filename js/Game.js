@@ -36,7 +36,7 @@ class Game {
         ];
         this.phrases = phrases;
         return this.phrases;
-    };
+    }
 
     /**
      * Method: selects random phrase from phrases property
@@ -46,13 +46,13 @@ class Game {
         this.activePhrase = phrases[Math.floor((Math.random()) * phrases.length)];
 
         return this.activePhrase;
-    };
+    }
 
     // Method: collect input, check letter and prevent multiple button selections
     handleInteraction(keyValue, target = null) {
         this.activePhrase.checkLetter(this, keyValue, target);
         return;
-    };
+    }
 
     // Method: remove life from scoreboard
     removeLife() {
@@ -67,14 +67,14 @@ class Game {
         if (this.missed > 4) {
             return this.gameOver();
         }
-    };
+    }
 
     // Method: check for win
     checkForWin() {
         if (document.getElementsByClassName('hide letter').length === 0) {
             return this.gameOver();
         }
-    };
+    }
 
     // Method: game over - display start screen overlay with message, and reset
     gameOver() {
@@ -104,6 +104,6 @@ class Game {
         const resetList = phrasePlace.firstElementChild;
         resetList.replaceChildren();
 
-    };
+    }
 
-};
+}
