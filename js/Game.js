@@ -9,7 +9,7 @@
 class Game {
     constructor(missed = 0, phrases = [], activePhrase = null) {
         this.missed = missed;
-        this.phrases = phrases;
+        this.phrases = this.createPhrases();
         this.activePhrase = activePhrase;
     }
 
@@ -18,7 +18,7 @@ class Game {
         hideOverlay.style.display = 'none';
         hideOverlay.classList.remove('win');
         hideOverlay.classList.remove('lose');
-        this.activePhrase = new Phrase(this.getRandomPhrase(this.createPhrases()));
+        this.getRandomPhrase(this.createPhrases());
         this.activePhrase.addPhraseToDisplay();
     }
 
@@ -28,14 +28,13 @@ class Game {
      */
     createPhrases() {
         const phrases = [
-            'live once',
-            'walk on',
-            'walking is the best medicine',
-            'be swept away',
-            'just step off',
+            new Phrase('live once'),
+            new Phrase('walk on'),
+            new Phrase('walking is the best medicine'),
+            new Phrase('be swept away'),
+            new Phrase('just step off'),
         ];
-        this.phrases = phrases;
-        return this.phrases;
+        return phrases;
     }
 
     /**
@@ -43,14 +42,24 @@ class Game {
      * @return {Object} Phrase object chosen to be used
      */
     getRandomPhrase(phrases) {
-        this.activePhrase = phrases[Math.floor((Math.random()) * phrases.length)];
-
+        this.activePhrase = phrases[Math.floor((Math.random()) * this.phrases.length)];
         return this.activePhrase;
     }
 
     // Method: collect input, check letter and prevent multiple button selections
     handleInteraction(keyValue, target = null) {
-        this.activePhrase.checkLetter(this, keyValue, target);
+        if (!this.activePhrase.checkLetter(keyValue)) {
+            if (target !== null && !target.classList.contains("wrong")) {
+                target.classList.add("wrong");
+                this.removeLife();
+            } else if (!document.querySelector(`.${keyValue.toUpperCase()}Key`).classList.contains("wrong")) {
+                document.querySelector(`.${keyValue.toUpperCase()}Key`).classList.add("wrong");
+                this.removeLife();
+            }
+        } else {
+            this.activePhrase.showMatchedLetter(keyValue, target);
+            this.checkForWin();
+        };
         return;
     }
 

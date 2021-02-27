@@ -33,19 +33,8 @@ class Phrase {
     /**
      * Method: checks if passed letter is in phrase and highlights chosen/wrong
      */
-    checkLetter(game, keyValue, target) {
-        if (phraseString.includes(keyValue)) {
-            this.showMatchedLetter(keyValue, target);
-            game.checkForWin();
-        } else {
-            if (target !== null && !target.classList.contains("wrong")) {
-                target.classList.add("wrong");
-                game.removeLife();
-            } else if (!document.querySelector(`.${keyValue.toUpperCase()}Key`).classList.contains("wrong")) {
-                document.querySelector(`.${keyValue.toUpperCase()}Key`).classList.add("wrong");
-                game.removeLife();
-            }
-        }
+    checkLetter(keyValue) {
+        return phraseString.includes(keyValue);
     }
 
     /**
