@@ -1,6 +1,7 @@
 # FSJS_4
 A simple Javascript word game, and Techtree FSJS Project 4
 
+Note: I disabled the buttons using a conditional, rather than switching them off with .disable: I felt that this was a more elegant solution than the brute force method, since it allowed me to approach both the keyboard input and the onscreen input with a similar methodology.
 
 HTML and CSS modified from the provided files as follows:
 1. Key identifier added to QWERTY buttons to facilitate keyboard listener e.g. ```<button class="key QKey">q</button>```
